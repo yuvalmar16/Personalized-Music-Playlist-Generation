@@ -1,0 +1,13 @@
+pandas
+numpy
+torch
+sentence-transformers
+tqdm
+huggingface-hub
+transformers
+openai
+gradio
+SpeechRecognition
+pyaudio
+utils
+dotenv   
