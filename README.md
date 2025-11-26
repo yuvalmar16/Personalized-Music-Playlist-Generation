@@ -11,6 +11,7 @@
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [Datasets](#datasets)
 - [Usage](#usage)
 - [How It Works](#how-it-works)
 - [Optional EDA](#optional-eda--data-analysis)
@@ -59,6 +60,19 @@ In short: tell it how you feel (e.g., *"Chill late-night driving vibes"*), and i
 │── .env.example              # Template for environment variables
 └── README.md                 # This documentation
 ```
+## Datasets
+
+This project leverages the following publicly available datasets:
+
+1. **Spotify 900K Dataset**  
+   **Title:** *500K+ Spotify Songs with Lyrics, Emotions & More*  
+   **Source:** [Kaggle - devdope/900k-spotify](https://www.kaggle.com/datasets/devdope/900k-spotify)  
+   **Description:** A large-scale dataset of over 900,000 songs containing metadata, lyrics, mood/emotion labels, and various audio features.
+
+2. **Billboard Hot 100 Charts Dataset**  
+   **Title:** *Billboard Hot 100 & More*  
+   **Source:** [Kaggle - Billboard Charts](https://www.kaggle.com/datasets)  
+   **Description:** Contains historical data on Billboard's Hot 100 charts, useful for analyzing song popularity, trends, and rankings over time.
 
 # Getting Started
 Prerequisites
