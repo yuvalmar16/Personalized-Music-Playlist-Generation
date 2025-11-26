@@ -125,8 +125,6 @@ def embed_df(df, decade_cols):
     df["embedding"] = df["embedding"].apply(clean_embedding)
     print(df["embedding"].head()) # TODO DELETE 
     
-    # df["embedding"] = df["embedding"].apply(ast.literal_eval)
-    # df['embedding'] = df['embedding'].apply(lambda x: json.dumps(x.tolist()))
 
     df['Release Date'] = pd.to_datetime(df['Release Date'], errors='coerce')
     return df.drop_duplicates(subset=["Artist(s)", "song", "Release Date", "Genre"])
@@ -157,6 +155,9 @@ def load_df_after_eda():
     df["Similar_Songs_list"] = df["Similar_Songs_list"].apply(lambda lst: [s for s in lst if pd.notna(s)])
     return df.drop_duplicates(subset=["Artist(s)", "song", "Release Date", "Genre"])
 
+
+
+########################################################## This code is commented out, but running the full EDA requires executing it, which involves downloading the open-source Mistral-7B model locall
 # def add_song_summaries(df):
 #     "adds a summary column to 7000 songs"
 
@@ -227,6 +228,7 @@ def load_df_after_eda():
 #     # print(response)
 #     return response.split("[/INST]")[-1].strip()
 
+#################################################################################################################################33
 
 def summarize_columns(df):
     summary = []
@@ -267,4 +269,5 @@ def summarize_columns(df):
                 summary.append(f"Type: string-like, couldn't count uniques")
 
     return "\n".join(summary)
+
 
