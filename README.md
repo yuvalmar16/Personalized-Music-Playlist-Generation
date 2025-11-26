@@ -160,7 +160,7 @@ When the script starts, you will be guided through setup directly in the termina
 
 ---
 
-## 3. Web App Workflow (Gradio)
+## Web App Workflow (Gradio)
 
 After initialization, the console will show a local URL:  
 (e.g., `Running on local URL: http://127.0.0.1:7405`)  
@@ -202,12 +202,13 @@ Open it in your browser.
 
 # Notes & Tips
 
-1. **Not satisfied with the playlist?**  
-   If you want a *completely new playlist*, ask the agent to **search again**, and in the same sentence write what you want now.  
+1. **Not happy with the playlist’s direction, or want to switch to a completely different theme than what you’ve requested so far?**  
+   If you want a *completely new playlist*, ask the agent to **search again**, *and in the same sentence* write what you want now.  
    Example:  
    *search again, now I want summer latino vibes focused on dancing*
 
-2. **Do NOT say things like:**  
+2. **How to replace one or several songs in the playlist:**
+   Do NOT say things like 
    *"replace song number 2"*  
    Instead use:  
    *remove ‘Shape of You’*  
@@ -224,10 +225,20 @@ Open it in your browser.
    You can also explicitly tell the agent:  
    *remember that I love The Weeknd*  
    *remember that I don’t like rock*  
-   *remember that I prefer calm playlists at night*  
+   *remember that I prefer calm playlists at night*
+   
+   You can also ask the agent what your current preference profile looks like after a playlist is generated,
+    and request updates or changes to it at any time.
+    
+    Example:
+    “What does my preference profile look like right now?”
+    “Update my profile so I prefer more indie and less pop.”
 
    Your profile updates dynamically based on your interactions.
 
+5. - **Per-User Memory**  
+  The system stores a **separate preference profile for each user**, identified **only by their name**.  
+  When you reconnect and type the same name, your profile is automatically loaded.
 ---
 
 # Enjoy your personalized music assistant 🎵
