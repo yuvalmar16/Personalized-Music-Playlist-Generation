@@ -120,16 +120,30 @@ Once initialization is complete, the console will provide a local URL (e.g., Run
 
    5. Refine: Swap songs, regenerate, or edit your prompt for new results.
   
-# How It Works
-   1. Input: User submits a natural‑language prompt (text or voice).
+##  How It Works
 
-   2. Retrieval: The system embeds the prompt and queries the vector database for semantically similar tracks (via rag.py).
+1. **Input**  
+   The user submits a natural‑language prompt — either by typing or using voice input (via microphone).
 
-   3. Contextualization: Retrieved tracks are combined with the user profile and prompt context.
+2. **Retrieval**  
+   The system embeds the prompt and queries the vector database to retrieve semantically similar tracks using `rag.py`.
 
-   4. Generation: The combined context is fed to the LLM, which generates a 5‑song playlist + explanations.
+3. **Contextualization**  
+   Retrieved tracks are enriched with the user's profile data (preferred genres, artists, favorite songs) and the prompt context.
 
-   5.   Refinement: The user can interactively edit the playlist.
+4. **Generation**  
+   This combined context is passed to the LLM, which generates a tailored 5‑song playlist along with explanations for why each song fits.
+
+5. **Refinement**  
+   The user can refine the playlist by:
+   - Swapping individual tracks
+   - Regenerating the playlist
+   - Editing the original prompt
+
+6. **Persistent Personalization**  
+   Once a user logs in for the first time by entering their name and setting up preferences, their profile is saved.  
+   On future visits, entering the same name automatically loads their preferences — enabling a personalized experience across sessions.
+
 
 # Optional EDA / Data Analysis
 The main.py script includes an integrated EDA (Exploratory Data Analysis) step. If you choose not to skip it, the system will:
