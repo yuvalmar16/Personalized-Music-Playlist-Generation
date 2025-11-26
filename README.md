@@ -158,8 +158,8 @@ The main.py script includes an integrated EDA (Exploratory Data Analysis) step. 
 
 
 # Project Presentation
-   
-  * [▶️ Watch the Demo]([https://drive.google.com/file/d/1HD3ofQJH39EHh2BEU1kw7AFhD76cw96Q/view?usp=sharing](https://drive.google.com/file/d/1Ez1RjBV9MMzhJ6zLJLmUPTz72QArhiMI/view?usp=sharing))
+
+* [▶️ Watch the Demo](https://drive.google.com/file/d/1Ez1RjBV9MMzhJ6zLJLmUPTz72QArhiMI/view?usp=sharing)
 
 
 # Evaluation & Reproducibility
