@@ -14,7 +14,9 @@
 - [Usage](#usage)
 - [How It Works](#how-it-works)
 - [Optional EDA](#optional-eda--data-analysis)
-- [Project Presentation](#project-presentation)  
+- [Project Presentation](#project-presentation)
+- [Evaluation & Reproducibility](#evaluation--reproducibility)
+
 - [Contributors](#contributors)
 
 
@@ -148,6 +150,43 @@ The main.py script includes an integrated EDA (Exploratory Data Analysis) step. 
    
    
   * [▶️ Watch the Demo](https://drive.google.com/file/d/1HD3ofQJH39EHh2BEU1kw7AFhD76cw96Q/view?usp=sharing)
+
+
+# Evaluation & Reproducibility
+
+The system's performance was evaluated using both **quantitative metrics** and **qualitative human judgment** to assess playlist quality and personalization effectiveness.
+
+---
+
+### Quantitative Metrics
+
+We employed **Normalized Discounted Cumulative Gain (NDCG)** at ranks 1 and 5:
+
+- `NDCG@1` and `NDCG@5`
+
+These metrics measure the relevance and ranking quality of top-recommended tracks, based on a **graded scale**:
+
+- `0` = Not relevant  
+- `1` = Relevant  
+- `2` = Highly relevant  
+
+We compared the RAG-based playlist generator against a **GPT-only baseline**, where the LLM was given the entire candidate table without structured retrieval.
+
+The evaluation also segmented results into:
+
+- **Known Profile** – when the user’s musical preferences were stored  
+- **Unknown Profile** – when no prior profile was available  
+
+This helped quantify the value of dynamic personalization.
+
+---
+
+Ensure the following Python libraries are installed:
+
+```bash
+pip install pandas openpyxl
+```
+
 
 # Contributors
 
