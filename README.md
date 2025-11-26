@@ -71,7 +71,7 @@ This project leverages the following publicly available datasets:
 
 2. **Billboard Hot 100 Charts Dataset**  
    **Title:** *Billboard Hot 100 & More*  
-   **Source:** [Kaggle - Billboard Charts](https://www.kaggle.com/datasets)  
+   **Source:** [Kaggle - Billboard Charts](https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs)  
    **Description:** Contains historical data on Billboard's Hot 100 charts, useful for analyzing song popularity, trends, and rankings over time.
 
 # Getting Started
