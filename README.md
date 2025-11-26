@@ -74,12 +74,16 @@ This project leverages the following publicly available datasets:
    **Source:** [Kaggle - Billboard Charts](https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs)  
    **Description:** Contains historical data on Billboard's Hot 100 charts, useful for analyzing song popularity, trends, and rankings over time.
 
+
 # Getting Started
 Prerequisites
  * Python 3.8+
  * A valid API key for your LLM provider (e.g., OpenAI).
 
-Installation
+---
+
+# Installation
+
 1. Clone the repository
    
 ```bash
@@ -105,7 +109,7 @@ pip install -r requirements.txt
 
 **Note:**  
 On some Windows machines, antivirus software (e.g., Windows Defender) may block parts of Gradio’s installation or execution.  
-If you encounter issues when launching Gradio, ensure your antivirus is not preventing the installation.
+If you encounter issues launching Gradio, ensure your antivirus is not blocking it.
 
 ---
 
@@ -124,56 +128,110 @@ with your actual key.
 
 ---
 
-5. Running the Code  
-When running the project for the first time:
+# Usage
 
-- The system will ask you to enter your **Hugging Face API key**.
-- After that, you will be prompted whether to run the data-manipulation steps:
-  * Type **skip** → skip preprocessing and use the already manipulated dataset.
-  * Type **anything else** → run the full preprocessing pipeline.
+Run the main application using:
+
+```bash
+python main.py
+```
+
+When the script starts, you will be guided through setup directly in the terminal:
+
+1. **Hugging Face Token**  
+   The system will ask you to paste your **Hugging Face Access Token** for authentication.
+
+2. **Data Manipulation Step**  
+   You will see:
+
+   ```
+   Type 'skip' to skip the EDA step, or write anything else to continue:
+   ```
+
+   - Type **skip** → skip preprocessing and use the ready-made dataset  
+   - Type **anything else** → run the full preprocessing pipeline (merging, cleaning, embeddings)
+
+3. **Optional: Summaries Step**  
+   In the file `data_preprossesing.py`, lines **161–229** are commented out.  
+   Uncomment them if you want the system to generate text summaries as part of preprocessing.
+
+   **Note:**  
+   This requires downloading a local model to your computer.
 
 ---
 
-6. Optional: Summaries in data_preprossesing.py  
-In the file `data_preprossesing.py`, lines **161-229** are commented out.
+## 3. Web App Workflow (Gradio)
 
-If you want to generate summaries as well, uncomment this block.
+After initialization, the console will show a local URL:  
+(e.g., `Running on local URL: http://127.0.0.1:7405`)  
+Open it in your browser.
 
-Note: This requires downloading a local model to your computer.
+1. **Login**  
+   Type your name in the input box.
 
-# Usage
-Run the main application using the command below. You will be guided through the setup interactively in the terminal.
+2. **Profile Setup**  
+   The system will ask you for your preferred genres, artists, and songs.  
+   These build your personalized user profile.
 
-```Bash
-python main.py
-```
- 1. API Token & Initialization
-   
-    When the script runs, follow the terminal prompts:
-    1. Hugging Face Login: You will be asked to paste your Hugging Face Access Token directly into the terminal to authenticate.
-    2. EDA Step: You will see the prompt:
-    
-```Plaintext
-Type 'skip' to skip the EDA step, or write anything else to continue:
-```
- * Type skip: Launches the Chat App immediately (once data is ready might take up to 2 minutes).
- * Type anything else: Runs the full data preprocessing, merging, and embedding pipeline before launching the app.
-   
-2. Web App Workflow (Gradio)
-Once initialization is complete, the console will provide a local URL (e.g., Running on local URL: http://127.0.0.1:7405). Open this link in your browser.
+3. **Prompt Entry (Music Request)**  
+   Example: *retro 80’s vibes with a theme of love*
 
-   1. Login: Start by typing your name in the input box.
+   - **Type**: Enter your request in the text box  
+   - **Speak**: Click the 🎤 Record button to speak your request  
+     **Note:** Voice input supports **Hebrew most reliably**.  
+     English works but with lower accuracy.
 
-   2. Profile Setup: The system will prompt you in the chat to input your preferred genres, artists, and songs to build your user profile.
+4. **Result**  
+   A **5-song playlist** is generated with **AI-written explanations**.
 
-   3. Prompt Entry (Query): Once your profile is saved, the system will ask you what you would like to listen to today (e.g., "retro 80's vibes with          theme of love").
-      *  Type: Write your request in the text box.
+5. **Refine**  
+   You can:
+   - regenerate  
+   - request modifications  
+   - add preferences  
+   - swap or remove songs  
 
-      * Speak: Click the 🎤 Record button to use your microphone.
+6. **End the Session**  
+   Type:
+   ```
+   exit
+   ```
+   to close the chat session.
 
-   4.   Result: Receive a generated 5‑song playlist with AI-written explanations.
+---
 
-   5. Refine: Swap songs, regenerate, or edit your prompt for new results.
+# Notes & Tips
+
+1. **Not satisfied with the playlist?**  
+   If you want a *completely new playlist*, ask the agent to **search again**, and in the same sentence write what you want now.  
+   Example:  
+   *search again, now I want summer latino vibes focused on dancing*
+
+2. **Do NOT say things like:**  
+   *"replace song number 2"*  
+   Instead use:  
+   *remove ‘Shape of You’*  
+   or  
+   *remove Ed Sheeran*
+
+3. **The system remembers you.**  
+   After your first login (and even after typing `exit`), your profile persists:
+   - preferred genres  
+   - favorite artists  
+   - disliked songs or genres  
+   - contextual preferences based on your chat  
+
+   You can also explicitly tell the agent:  
+   *remember that I love The Weeknd*  
+   *remember that I don’t like rock*  
+   *remember that I prefer calm playlists at night*  
+
+   Your profile updates dynamically based on your interactions.
+
+---
+
+# Enjoy your personalized music assistant 🎵
+
   
 ##  How It Works
 
