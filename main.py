@@ -23,8 +23,6 @@ from gradio_helpers import *
 from record_queries import transcribe_speech
 from states import users ,column_summary_text, df, Artists_Popularity_df
 from score_by_song import score_by_artist
-# TODO: initialize users database
-#users = {}
 
 port_val = 7405
 column_summary_text = ''
@@ -129,4 +127,5 @@ def main():
 
 
 if __name__=='__main__':
+
     main()
