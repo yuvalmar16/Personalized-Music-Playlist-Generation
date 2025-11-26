@@ -69,7 +69,7 @@ Installation
 1. Clone the repository
    
 ```bash
-git clone [https://github.com/yuvalmar16/Personalized-Music-Playlist-Generation.git](https://github.com/yuvalmar16/Personalized-Music-Playlist-Generation.git)
+git clone https://github.com/yuvalmar16/Personalized-Music-Playlist-Generation.git
 cd Personalized-Music-Playlist-Generation
 ```
 2. Create & Activate Virtual Environment
