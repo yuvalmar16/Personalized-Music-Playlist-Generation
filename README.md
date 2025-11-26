@@ -74,74 +74,73 @@ This project leverages the following publicly available datasets:
    **Source:** [Kaggle - Billboard Charts](https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs)  
    **Description:** Contains historical data on Billboard's Hot 100 charts, useful for analyzing song popularity, trends, and rankings over time.
 
-## Getting Started
+Getting Started
+Prerequisites
 
-### Prerequisites
-- Python 3.8+
-- A valid API key for your LLM provider (e.g., OpenAI)
+Python 3.8+
 
----
+A valid API key for your LLM provider (e.g., OpenAI)
 
-## Installation
-
-### 1. Clone the repository
-```bash
+Installation
+1. Clone the repository
 git clone https://github.com/yuvalmar16/Personalized-Music-Playlist-Generation.git
 cd Personalized-Music-Playlist-Generation
+
 2. Create & Activate Virtual Environment
-bash
-Copy code
-# Mac / Linux
+
+Mac / Linux
+
 python -m venv venv
 source venv/bin/activate
 
-# Windows
+
+Windows
+
 python -m venv venv
 venv\Scripts\activate
+
 3. Install Dependencies
-bash
-Copy code
 pip install -r requirements.txt
+
+
 Note:
 On some Windows machines, antivirus software (e.g., Windows Defender) may block parts of Gradio’s installation or execution.
 If you encounter issues when launching Gradio, ensure your antivirus is not preventing the installation.
 
 4. Insert Your OpenAI API Key
+
 Open the file:
 
-Copy code
 openai_client.py
+
 In line 8, replace:
 
-python
-Copy code
 openai_api_key = "INSERT YOUR API KEY HERE"
-with your actual API key.
+
+
+with your actual OpenAI API key.
 
 5. Running the Code – HuggingFace Key + Data Manipulation Options
-When running the system for the first time:
 
-The program will ask you to enter your Hugging Face API key.
+When you run the program for the first time:
 
-After that, you will be prompted to choose whether to run the data manipulation pipeline:
+You will be asked to enter your Hugging Face API key.
 
-Enter skip → skips all preprocessing and uses the pre-processed dataset.
+You will then be asked whether to run the data-manipulation pipeline:
 
-Enter anything else → runs the full preprocessing & manipulation steps.
+Type skip → skips preprocessing and uses the pre-processed dataset.
+
+Type anything else → runs the full preprocessing & manipulation steps.
 
 6. Optional: Enable Summaries in data_preprossesing.py
-In the file:
 
-Copy code
-data_preprossesing.py
+In the file data_preprossesing.py,
 the block in lines 161–229 is currently commented out.
 
-If you want to generate summaries as well, simply uncomment this block.
+If you want to generate summaries as well, simply uncomment this section.
 
-Note: Running this step requires downloading a local model to your machine.
-
-yaml
-Copy code
+⚠️ Note:
+This requires downloading an additional model locally, which may take time and disk space.
 
 # Usage
 Run the main application using the command below. You will be guided through the setup interactively in the terminal.
