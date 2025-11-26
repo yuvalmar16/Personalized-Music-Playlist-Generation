@@ -83,6 +83,8 @@ def main():
         # embed the songs' lyrics of the ~20k most popular songs across all decades in the data 
         df = embed_df(df, decade_cols)
 
+        # if you want to summerize the top 7000 popular songs accross all the avilabe decades you should run the following line : df = add_song_summaries(df)
+
 
 
     print(" Preparing column summaries...")
@@ -129,3 +131,4 @@ def main():
 if __name__=='__main__':
 
     main()
+
