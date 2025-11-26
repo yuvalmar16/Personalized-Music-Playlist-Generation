@@ -123,7 +123,7 @@ Once initialization is complete, the console will provide a local URL (e.g., Run
 ##  How It Works
 
 1. **Input**  
-   The user submits a natural‑language prompt — either by typing or using voice input (via microphone).
+   The user submits a natural‑language prompt - either by typing or using voice input (via microphone).
 
 2. **Retrieval**  
    The system embeds the prompt and queries the vector database to retrieve semantically similar tracks using `rag.py`.
@@ -142,7 +142,7 @@ Once initialization is complete, the console will provide a local URL (e.g., Run
 
 6. **Persistent Personalization**  
    Once a user logs in for the first time by entering their name and setting up preferences, their profile is saved.  
-   On future visits, entering the same name automatically loads their preferences — enabling a personalized experience across sessions.
+   On future visits, entering the same name automatically loads their preferences - enabling a personalized experience across sessions.
 
 
 # Optional EDA / Data Analysis
