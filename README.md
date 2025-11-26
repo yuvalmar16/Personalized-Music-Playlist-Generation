@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![RAG](https://img.shields.io/badge/Architecture-RAG-green)
 ![OpenAI](https://img.shields.io/badge/LLM-OpenAI-orange)
+![Gradio](https://img.shields.io/badge/UI-Gradio-orange)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ## Table of Contents
@@ -13,8 +14,9 @@
 - [Usage](#usage)
 - [How It Works](#how-it-works)
 - [Optional EDA](#optional-eda--data-analysis)
-- [Demo & Screenshots](#demo--screenshots)
+- [Project Presentation](#project-presentation)  
 - [Contributors](#contributors)
+
 
 ---
 
@@ -33,8 +35,8 @@ In short: tell it how you feel (e.g., *"Chill late-night driving vibes"*), and i
 * **🧠 RAG Architecture:** Semantic vector retrieval of tracks combined with LLM‑driven playlist generation.
 * **👤 Dynamic User Profiling:** The system saves user preferences (favorite songs/artists/genres) for evolving recommendations over time.
 * **💡 Explainable Recommendations:** For each suggested track, you receive a short justification explaining why it fits your prompt and profile.
-* **🔄 Interactive Editing:** After generation, you can swap songs, regenerate the playlist, or refine the prompt/profile for a new result.
-* **🗣️ Custom Prompts:** Supports natural‑language prompts like *"Songs for a rainy Sunday afternoon"* or *"Energetic workout mix"*.
+* **🎤 Voice Interaction:** Use the microphone to speak your request instead of typing.
+* **🔄 Integrated Data Pipeline:** Choose to run the full data preprocessing (EDA) or skip directly to the chat interface.
 
 ---
 
@@ -45,11 +47,12 @@ In short: tell it how you feel (e.g., *"Chill late-night driving vibes"*), and i
 │── data_preprocessing.py     # Preprocess raw music dataset (cleaning, feature extraction, embedding)
 │── rag.py                    # Core logic: embeddings, vector retrieval, LLM input/output handling
 │── openai_client.py          # Interface with LLM / OpenAI API
-│── score_by_song.py          # (Optional) Script for scoring songs individually
+│── score_by_song.py          # Script for scoring songs individually
 │── states.py                 # Configuration: constants, user profile structure, caching
 │── helpers.py                # Utility functions (data loading, parsing)
 │── gradio_helpers.py         # Helpers for Web-App UI formatting and output display
-│── main.py                   # ORCHESTRATOR: Main entry point (Retrieval + Generation + UI)
+│── record_queries.py         # Speech-to-text transcription logic
+│── main.py                   # ORCHESTRATOR: Main entry point (EDA Prompt + UI Launch)
 │── requirements.txt          # Python dependencies
 │── .env.example              # Template for environment variables
 └── README.md                 # This documentation
@@ -81,4 +84,75 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+# Usage
+Run the main application using the command below. You will be guided through the setup interactively in the terminal.
 
+```Bash
+python main.py
+```
+ 1. API Token & Initialization
+   
+    When the script runs, follow the terminal prompts:
+    1. Hugging Face Login: You will be asked to paste your Hugging Face Access Token directly into the terminal to authenticate.
+    2. EDA Step: You will see the prompt:
+    
+```Plaintext
+Type 'skip' to skip the EDA step, or write anything else to continue:
+```
+ * Type skip: Launches the Chat App immediately (once data is ready might take up to 2 minutes).
+ * Type anything else: Runs the full data preprocessing, merging, and embedding pipeline before launching the app.
+   
+2. Web App Workflow (Gradio)
+Once initialization is complete, the console will provide a local URL (e.g., Running on local URL: http://127.0.0.1:7405). Open this link in your browser.
+
+   1. Login: Start by typing your name in the input box.
+
+   2. Profile Setup: The system will prompt you in the chat to input your preferred genres, artists, and songs to build your user profile.
+
+   3. Prompt Entry (Query): Once your profile is saved, the system will ask you what you would like to listen to today (e.g., "retro 80's vibes with          theme of love").
+      *  Type: Write your request in the text box.
+
+      * Speak: Click the 🎤 Record button to use your microphone.
+
+   4.   Result: Receive a generated 5‑song playlist with AI-written explanations.
+
+   5. Refine: Swap songs, regenerate, or edit your prompt for new results.
+  
+# How It Works
+   1. Input: User submits a natural‑language prompt (text or voice).
+
+   2. Retrieval: The system embeds the prompt and queries the vector database for semantically similar tracks (via rag.py).
+
+   3. Contextualization: Retrieved tracks are combined with the user profile and prompt context.
+
+   4. Generation: The combined context is fed to the LLM, which generates a 5‑song playlist + explanations.
+
+   5.   Refinement: The user can interactively edit the playlist.
+
+# Optional EDA / Data Analysis
+The main.py script includes an integrated EDA (Exploratory Data Analysis) step. If you choose not to skip it, the system will:
+
+   * Load the spotify_dataset.csv.
+
+   * Convert dates and merge with Billboard popularity data.
+
+   * Embed song lyrics for the retrieval model.
+
+   * Generate column summaries for the LLM context.
+
+
+# Project Presentation
+
+
+  * [▶️ Watch the Presentation Video](https://drive.google.com/file/d/1HD3ofQJH39EHh2BEU1kw7AFhD76cw96Q/view?usp=sharing)
+   
+   
+  * [▶️ Watch the Demo](https://drive.google.com/file/d/1HD3ofQJH39EHh2BEU1kw7AFhD76cw96Q/view?usp=sharing)
+
+# Contributors
+
+| Name            | GitHub                       |
+|-----------------|------------------------------|
+| Yuval Margolin  | [yuvalmar16](https://github.com/yuvalmar16) |
+| Ravid Gersh     | [RavidGersh59](https://github.com/RavidGersh59) |
+| Daniel Maor     | [danielmaor0808](https://github.com/danielmaor0808) |
