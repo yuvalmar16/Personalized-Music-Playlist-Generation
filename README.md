@@ -98,8 +98,10 @@ python -m venv venv
 source venv/bin/activate
 
 # Windows
-python -m venv venv
-venv\Scripts\activate
+python -m venv playlist_env
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+playlist_env\Scripts\activate
+
 ```
 
 3. Install Dependencies
