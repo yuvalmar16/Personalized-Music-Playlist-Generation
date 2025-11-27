@@ -203,9 +203,9 @@ Open it in your browser.
 # Notes & Tips
 
 1. **Not happy with the playlist’s direction, or want to switch to a completely different theme than what you’ve requested so far?**  
-   If you want a *completely new playlist*, ask the agent to **search again**, *and in the same sentence* write what you want now.  
+   If you want a *completely new playlist*, ask the agent to **try a new search**, *and in the same sentence* write what you want now.  
    Example:  
-   *search again, now I want summer latino vibes focused on dancing*
+   *Try a new search, now I want summer latino vibes focused on dancing*
 
 2. **How to replace one or several songs in the playlist:**
    Do NOT say things like 
