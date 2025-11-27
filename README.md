@@ -66,13 +66,18 @@ This project leverages the following publicly available datasets:
 
 1. **Spotify 900K Dataset**  
    **Title:** *500K+ Spotify Songs with Lyrics, Emotions & More*  
-   **Source:** [Kaggle - devdope/900k-spotify](https://www.kaggle.com/datasets/devdope/900k-spotify)  
+   **Source:** [Download from Google Drive](https://drive.google.com/file/d/1VN343XsJ_o3mSQf1rc6g_pE9eHpPBqY_/view?usp=drive_link)  
    **Description:** A large-scale dataset of over 900,000 songs containing metadata, lyrics, mood/emotion labels, and various audio features.
 
 2. **Billboard Hot 100 Charts Dataset**  
    **Title:** *Billboard Hot 100 & More*  
-   **Source:** [Kaggle - Billboard Charts](https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs)  
+   **Source:** [Download from Google Drive](https://drive.google.com/file/d/1cBEL1u_Kl7W3wlhRvg96-h_PjhtolKVk/view?usp=sharing)  
    **Description:** Contains historical data on Billboard's Hot 100 charts, useful for analyzing song popularity, trends, and rankings over time.
+
+3. **Processed Song Embeddings**  
+   **Title:** *text with embeddings*  
+   **Source:** [Download from Google Drive](https://drive.google.com/file/d/1b4eIBCPxwpH0cXhTA5jsSW3FOGoKkZi3/view?usp=sharing)  
+   **Description:** This is the preprocessed embedding file used for semantic retrieval. It includes vector representations of songs based on metadata, lyrics, and genre — essential for powering the RAG-based recommendation pipeline.
 
 
 # Getting Started
